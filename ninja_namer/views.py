@@ -9,7 +9,7 @@ def get_name(request):
     main_naming_process = MainNamingProcess(initial_words)
 
     response = {
-        "full_name": main_naming_process.get_full_name()
+        "name": main_naming_process.get_full_name()
     }
 
     return JsonResponse(response)
