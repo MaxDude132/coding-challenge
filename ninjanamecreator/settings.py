@@ -25,9 +25,9 @@ DEBUG = False
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'dev-environment' if DEBUG else os.environ.get('SECRET_KEY')
 
-ALLOWED_HOSTS = ['maxdude132-ninjify.herokuapp.com', 'https://localhost:3000', '127.0.0.1']
+ALLOWED_HOSTS = ['maxdude132-ninjify.herokuapp.com']
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000']
+CORS_ALLOWED_ORIGINS = ['https://maxdude132.github.io']
 
 # Application definition
 
