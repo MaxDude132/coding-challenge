@@ -1,5 +1,6 @@
 from audioop import maxpp
 from django.db import models
+from django.core.exceptions import ValidationError
 
 
 # Create your models here
@@ -33,6 +34,11 @@ class NinjaWordOption(models.Model):
 
     def get_adjective_type(self):
         return self.adjective_type
+
+    def clean(self):
+        if len(self.objects.filter(word=self.word, word_type=self.word_type)) > 0:
+            raise(ValidationError({'word': 'The word is already in the database as the same word type.'}))
+
 
 
 class NinjaName(models.Model):
